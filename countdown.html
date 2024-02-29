@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countdown timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--<link rel="stylesheet" href="countdown.css">-->
+</head>
+<body style="background-color:rgb(242, 185, 185);">
+
+
+<style>
+    .everything{
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        top: 20%;
+        
+    }
+
+    .timer{
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    .sub_timer{
+        width: 100px;
+        height: 100px;
+        background: rgba(255,255,255,0.19);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        overflow: hidden;
+   }
+
+    .digit{
+        color: #fff;
+        font-weight: lighter;
+        font-size: 25px;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .digit_name{
+        color: #000;
+        background: #fff;
+        text-align: center;
+        padding: 0.4rem 0;
+        font-size: 10px;
+
+    }
+
+    @media screen and (max-width: 390px) {
+        .image{
+        width: 10px;
+        height: 10px;
+        }
+       
+        .timer{
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40
+        px;
+    }
+
+    }
+    @media (min-width: 769px) {
+        /* Styles for larger screens */
+    }
+
+    
+</style>
+
+
+<div class="everything">
+    <!--https://i.pinimg.com/originals/40/22/4f/40224f4f6d46a10a301114db0cc01684.jpg-->
+      <p>
+        <img class="image" src="/luxury dream house.jpg" alt="luxury dream house" 
+        style="float:left;width:590px;height:373px; margin-right: 40px; border-radius:10px;">
+      </p>
+    
+  <div class="text">
+      <h1 style="color: rgb(105, 47, 57);">Luxury Dream House Giveaway</h1>
+      <h4>Giveaway ends on Saturday, 9th of March</h4>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit odit quas la
+          udantium similique possimus dolorum cumque quos, officiis error, quasi eaqu
+          e exercitationem earum blanditiis nisi officia enim mollitia voluptates repud
+          iandae! Placeat vero voluptas saepe deserunt velit alias voluptates natus exerc
+          itationem hic non nulla repellendus sequi ducimus, doloribus impedit reiciendis possimus. 
+      </p>
+  </div>  
+
+
+ <div class="timer">
+    <div class="sub_timer">
+        <h1 id="days" class="digit">0</h1>
+        <p class="digit_name">Days</p>
+    </div>
+
+    <div class="sub_timer">
+        <h1 id="hours" class="digit">0</h1>
+        <p class="digit_name">Hours</p>
+    </div>
+
+    <div class="sub_timer">
+        <h1 id="minutes" class="digit">0</h1>
+        <p class="digit_name">Minutes</p>
+    </div>
+
+    <div class="sub_timer">
+        <h1 id="seconds" class="digit">0</h1>
+        <p class="digit_name">Seconds</p>
+    </div>
+ </div>
+</div>
+
+<!--javascript-->
+<!--<script src="/js/countdown.js"></script>-->
+
+<script>
+    //create a date object and set the time to the day you want it to count down to
+//getTime is to get the timestamp in milliseconds 
+var countDownDate = new Date ("Mar 9,2024").getTime();
+
+//set an interval that is executed every one second (1000millisecond)
+var x = setInterval(function(){
+
+//this collects the current date and time and assigns it to the variable now
+var now = new Date().getTime();
+
+//this calculates the difference
+var distance = countDownDate - now;
+
+//calculation fot days, hours, minutes and seconds
+var days = Math.floor(distance/ (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance %(1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+//this will display the updated time in the html file 
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+},1000);
+</script>
+
+
+   
+</body>
+</html>
+    
