@@ -1,5 +1,4 @@
 .everything{
-    position: absolute;
     left: 5%;
     right: 5%;
     top: 20%;
@@ -37,4 +36,7 @@
     padding: 0.4rem 0;
     font-size: 10px;
 
+}
+
+    
 }
